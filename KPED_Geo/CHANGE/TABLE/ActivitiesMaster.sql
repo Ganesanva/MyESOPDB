@@ -1,4 +1,5 @@
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF__Activitie__IsAct__20ACD28B]') AND type = 'D')
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF__Activitie__IsAct__20ACD28B]')
+AND type = 'D')
 BEGIN
 ALTER TABLE [dbo].[ActivitiesMaster] ADD  Constraint [DF__Activitie__IsAct__20ACD28B] DEFAULT ((0)) FOR [IsActive]
 END
