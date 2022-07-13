@@ -11,7 +11,17 @@ ALTER COLUMN [BLOCK_HRS]  INT
 END
 
 
-IF NOT EXISTS (SELECT 'X' FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF__PaymentGa__BLOCK__0BD6CC47]') AND type = 'D')
+IF NOT EXISTS (
+select 'X' 
+from sys.default_constraints 
+where parent_object_id = object_id('PaymentGatewayParameters')
+and parent_column_id in (		
+						select column_id
+						from sys.columns 
+						where object_id = object_id('PaymentGatewayParameters')
+						and name = 'BLOCK_HRS'
+						) and type = 'D'
+)
 BEGIN
 ALTER TABLE [dbo].[PaymentGatewayParameters] ADD  DEFAULT ((0)) FOR [BLOCK_HRS]
 END
@@ -30,7 +40,15 @@ ALTER COLUMN [IS_TRANS_REVERSAL_MAIL_ENABLED]  CHAR (1)
 END
 
 
-IF NOT EXISTS (SELECT 'X' FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF__PaymentGa__IS_TR__0CCAF080]') AND type = 'D')
+IF NOT EXISTS (select 'X' 
+from sys.default_constraints 
+where parent_object_id = object_id('PaymentGatewayParameters')
+and parent_column_id in (		
+						select column_id
+						from sys.columns 
+						where object_id = object_id('PaymentGatewayParameters')
+						and name = 'IS_TRANS_REVERSAL_MAIL_ENABLED'
+						) and type = 'D')
 BEGIN
 ALTER TABLE [dbo].[PaymentGatewayParameters] ADD  DEFAULT ((0)) FOR [IS_TRANS_REVERSAL_MAIL_ENABLED]
 END
