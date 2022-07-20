@@ -8,8 +8,7 @@ IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[VW_C
 EXEC dbo.sp_executesql @statement = N'CREATE   VIEW [dbo].[VW_Cancellation_Year]
 as
 SELECT DISTINCT YEAR(GrantDate) as CancellationYear
-FROM CancellationDetails_rpt with(nolock)
-GO' 
-GO
+FROM CancellationDetails_rpt with(nolock)' 
+
 
 

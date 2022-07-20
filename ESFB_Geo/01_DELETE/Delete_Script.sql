@@ -4,7 +4,7 @@
 --Create date  : 12-07-2022
 --Description  : Drop Scripts for Additional objects in DB - ESFB_Geo
 --------------------------------------------------------------
-use ESFB_GEO_14072022;
+
 
 Set Nocount OFF
 
