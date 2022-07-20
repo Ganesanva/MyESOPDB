@@ -1,0 +1,8 @@
+dbo.AUDIT_SOPs_UI.sql
+dbo.CancellationDetails_rpt.sql
+dbo.GrantViewConfiguration.sql
+dbo.LapseDetails_rpt.sql
+dbo.MST_DEFERRED_CASH_GRANT.sql
+dbo.OTPConfigurationFieldMaster.sql
+dbo.PersonalStatus_rpt.sql
+dbo.report_data_rpt.sql

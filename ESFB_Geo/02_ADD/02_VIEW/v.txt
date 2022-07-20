@@ -1,0 +1,13 @@
+dbo.VW_Cancellations.sql
+dbo.VW_Cancellations_DB.sql
+dbo.VW_Cancellation_Year.sql
+dbo.VW_Cancellation_Year_DB.sql
+dbo.VW_CancelledQuantity_rpt.sql
+dbo.VW_ExercisedQuantity_rpt.sql
+dbo.VW_GSR.sql
+dbo.VW_GSR_DB.sql
+dbo.VW_Live.sql
+dbo.VW_PSR.sql
+dbo.VW_PSR_DB.sql
+dbo.VW_RandomUserId.sql
+dbo.VW_UnApprovedQuantity_rpt.sql
