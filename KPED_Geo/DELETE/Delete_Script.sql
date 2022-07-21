@@ -7,16 +7,18 @@
 
 Set Nocount OFF
 
-IF object_id('EMPLOYEEMASTER_QA','U')	is not null 
+IF object_id('EMPLOYEEMASTER_QA','U')	is not null  and 
+OBJECTPROPERTY(OBJECT_ID('EMPLOYEEMASTER_QA'), 'TableTemporalType') = 2 
 begin 
 ALTER TABLE dbo.EMPLOYEEMASTER_QA SET (SYSTEM_VERSIONING = OFF)
 end 
 go
 
-IF object_id('EmployeeMaster_QAHistory','U')	is not null 
+IF object_id('EmployeeMaster_QAHistory','U')	is not null  and 
+OBJECTPROPERTY(OBJECT_ID('EmployeeMaster_QAHistory'), 'TableTemporalType') = 2 
 begin
 ALTER TABLE dbo.EmployeeMaster_QAHistory SET (SYSTEM_VERSIONING = OFF)
-end
+end 
 go
 
 ---Table Drop scripts

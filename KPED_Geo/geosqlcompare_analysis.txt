@@ -1,0 +1,10 @@
+1   - Column properties in table mismatch - i need to work on it
+3   - Index properties mismatch - Discuss with thiru make it one shot change
+711 - Sp mismatch starts - 
+771 - Function properties mismatch (Alignment issue shown as diff)
+772 - Table type properties mismatch - i need to work on it
+
+
+
+
+

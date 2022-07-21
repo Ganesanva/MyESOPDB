@@ -1,1 +1,1 @@
-for %%G in (*.sql) do sqlcmd /S "20.44.52.238" /d "KPED_LIVE" -U "GeoPit" -P "Ge@P!t#1234" -i"%%G"
+for %%G in (*.sql) do sqlcmd /S "20.44.52.238" /d "KPED_LIVE1" -U "GeoPit" -P "Ge@P!t#1234" -i"%%G"
