@@ -1,10 +1,13 @@
 IF NOT EXISTS (
 		SELECT 'X'
-		FROM sys.default_constraints
-		WHERE parent_object_id = object_id('ActivitiesMaster')
+		FROM sys.default_constraints dc
+		JOIN sys.objects o ON o.object_id = dc.parent_object_id
+		JOIN sys.columns c ON o.object_id = c.object_id
+			AND c.column_id = dc.parent_column_id
+		WHERE o.name = 'ActivitiesMaster'
+			AND c.name = 'IsActive'
 		)
 BEGIN
-	--ALTER TABLE [dbo].[ActivitiesMaster] ADD  Constraint [DF__Activitie__IsAct__20ACD28B] DEFAULT ((0)) FOR [IsActive]
 	ALTER TABLE [dbo].[ActivitiesMaster] ADD DEFAULT((0))
 	FOR [IsActive]
 END
