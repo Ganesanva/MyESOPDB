@@ -1,0 +1,1 @@
+for %%G in (*.sql) do sqlcmd /S "20.44.52.238" /d "ESFB_19072022" -U "GeoPit" -P "Ge@P!t#1234" -i"%%G"
