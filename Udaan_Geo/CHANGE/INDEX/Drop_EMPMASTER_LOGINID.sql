@@ -1,0 +1,9 @@
+IF  EXISTS (
+				SELECT 'X'
+				FROM SYS.INDEXES 
+				WHERE  NAME = 'EMPMASTER_LOGINID'
+			  )
+BEGIN
+Drop index EmployeeMaster.EMPMASTER_LOGINID
+END
+ 
