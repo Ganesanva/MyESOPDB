@@ -1,3 +1,9 @@
+If exists (
+Select 'X'
+from sys.objects 
+where name ='TEMP_FMV_DETAILS'
+)
+begin
 IF not exists (
 Select 'X'
 from sys.columns  a 
@@ -13,3 +19,4 @@ begin
 Alter table TEMP_FMV_DETAILS
 alter column [GRANTOPTIONID]  VARCHAR (100)  NULL
 end 
+end
