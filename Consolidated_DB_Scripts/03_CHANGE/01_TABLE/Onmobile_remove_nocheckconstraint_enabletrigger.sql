@@ -845,3 +845,33 @@ begin
 ALTER TABLE GrantLeg
 CHECK CONSTRAINT chk_ExercisedQuantity;
 end
+
+
+
+If exists (SELECT 'X'
+			FROM sysindexes
+			WHERE name='EMPMASTER_LOGINID'
+			)
+begin
+drop index   EmployeeMaster.EMPMASTER_LOGINID
+
+end
+
+If exists (SELECT 'X'
+			FROM sysindexes
+			WHERE name='Scheme_MIT_ID'
+			)
+begin
+drop index   Scheme.Scheme_MIT_ID
+
+end
+
+If exists (SELECT 'X'
+			FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+			WHERE TABLE_NAME='Cancelled'
+			and CONSTRAINT_NAME = 'FK_Cancelled_CancelledTrans'
+			)
+begin
+ALTER TABLE [dbo].[Cancelled] 
+CHECK CONSTRAINT [FK_Cancelled_CancelledTrans];
+end
